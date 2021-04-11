@@ -173,7 +173,7 @@ alg = input("Choose algorithm: \n 1: A* search \n 2: BFS \n 3: Dijkstra \n")
 while(alg not in [1,2,3]):
 	alg = input()
 
-filename = "boards/board-2-" + str(choice) + ".txt"
+filename = "board-2-" + str(choice) + ".txt"
 pathList = []
 a = AStar()
 path = a.process()
@@ -181,7 +181,7 @@ path = a.process()
 
 with open(filename) as f:
  	grid = f.read().splitlines()
-out = open("outBoard3-" + str(choice) + str(alg) + ".txt",'w')
+out = open("outBoard2-" + str(choice) + str(alg) + ".txt",'w')
 for x in range(a.grid_width):
  	for y in range(a.grid_height):
 			out.write(grid[x][y])
@@ -224,7 +224,7 @@ for x in range(a.grid_width):
  			draw.polygon(((20*y + 5.5, 20*x + 8), (20*y + 9.5, 20*x +13), (20*y + 13.5, 20*x + 8)), fill=(55,55,55))
 			draw.polygon(((20*y + 5.5, 20*x + 11), (20*y + 9.5, 20*x + 6), (20*y + 13.5, 20*x + 11)), fill=(55,55,55))
 del draw
-im.save("test3-" + str(choice) + str(alg) + ".png", "PNG")
+im.save("test2-" + str(choice) + str(alg) + ".png", "PNG")
 
 #implement total price print.
 cost = 0
