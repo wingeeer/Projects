@@ -150,7 +150,7 @@ choice = input("Choose map: 1,2,3 or 4 \n")
 while(choice not in [1,2,3,4]):
 	choice = input("Not a valid value, please try again \n")
 
-filename = "board-1-" + str(choice) + ".txt"
+filename = "boards/board-1-" + str(choice) + ".txt"
 a = AStar()
 pathList = a.get_path()
 path = a.process()
@@ -158,7 +158,7 @@ path = a.process()
 
 with open(filename) as f:
  	grid = f.read().splitlines()
-out = open("outBoard1-" + str(choice) + ".txt",'w')
+out = open("out/outBoard1-" + str(choice) + ".txt",'w')
 for x in range(a.grid_width):
 	for y in range(a.grid_height):
 		if (x,y) in pathList:
@@ -190,5 +190,5 @@ for x in range(a.grid_width):
 			draw.rectangle(((20*y+7,20*x+7), (20*y+7+4, 20*x+7+4)) , fill=(255,0,0), outline=(255,0,0))
 
 del draw
-im.save("test1-" + str(choice) + ".png", "PNG")
+im.save("out/IMG/test1-" + str(choice) + ".png", "PNG")
 
