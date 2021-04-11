@@ -296,7 +296,7 @@ elif userInput == 4:
     choice = 'veryhard'
 
 start = timeit.default_timer()
-csp = create_sudoku_csp(choice + '.txt')
+csp = create_sudoku_csp("boards/" + choice + '.txt')
 numOfCalls = 0
 numOfFailures = 0
 if csp.backtracking_search() != 'failure':
